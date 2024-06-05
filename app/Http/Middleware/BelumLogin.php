@@ -17,8 +17,8 @@ class BelumLogin
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
-            return redirect('admin');
+            return $next($request);
         }
-        return $next($request);
+        return redirect('admin');
     }
 }
