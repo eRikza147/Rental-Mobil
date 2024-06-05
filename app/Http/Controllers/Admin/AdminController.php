@@ -15,6 +15,6 @@ class AdminController extends Controller
         ->leftJoin('merk', 'merk.id', '=', 'car.merk')
         ->select('harga.id', 'car.model', 'car.warna', 'car.tahun', 'harga.plat', 'harga.harga', 'car.foto_mobil','merk.merk')
         ->get();
-        return view('admin.home');
+        return view('admin.home',$data);
     }
 }

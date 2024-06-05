@@ -22,3 +22,4 @@ class SudahLogin
         return redirect()->route('/');
     }
 }
+

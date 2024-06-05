@@ -11,7 +11,7 @@ class CustomerController extends Controller
 {
     public function home(){
         $data['customer']=customer::get();
-        return view('costumer/home');
+        return view('costumer/home',$data);
     }
 
     public function tambah(){
@@ -40,7 +40,7 @@ class CustomerController extends Controller
                 'foto_ktp' => $foto_ktp,
                 'foto_sim' => $foto_sim
              ]);
-          return back()->with('pesan', 'Data berhasil diinputkan');
+          return redirect('customer')->with('pesan', 'Data berhasil diinputkan');
        }
      }
     
